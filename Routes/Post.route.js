@@ -7,8 +7,12 @@ const postRoutes = express.Router();
 postRoutes.get("/", async (req, res) => {
   const { id } = req.body;
   const { device1, device2, device3 } = req.query;
-//   console.log(device1);
-  let qu = { id, device: device1 || device2 || device3 };
+  //   console.log(device1);
+  let qu = { id };
+  if (device1 || device2 || device3) {
+    qu = { id, device: device1 || device2 || device3 };
+  }
+
   try {
     const posts = await PostModel.find(qu);
     res.send(posts);
