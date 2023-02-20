@@ -3,7 +3,7 @@ const cors = require("cors");
 const { connection } = require("./db");
 const { userRoutes } = require("./Routes/User.route");
 const { postRoutes } = require("./Routes/Post.route");
-const { Auth } = require("./middelware/authmiddelware");
+const { Auth } = require("./middelware/AuthMiddelware.auth");
 const app = express();
 require("dotenv").config();
 app.use(express.json());
