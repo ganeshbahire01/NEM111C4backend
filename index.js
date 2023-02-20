@@ -8,8 +8,8 @@ const app = express();
 require("dotenv").config();
 app.use(express.json());
 app.use(cors());
-app.use("/user", userRoutes);
 app.use(Auth);
+app.use("/user", userRoutes);
 app.use("/post", postRoutes);
 
 app.listen(process.env.PORT, async () => {
